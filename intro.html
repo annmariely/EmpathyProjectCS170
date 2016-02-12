@@ -1,0 +1,166 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>HCI Project Portfolio</title>  
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Latest compiled and minified bootstrap CSS -->
+	<link rel="stylesheet" 
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+	crossorigin="anonymous">
+
+
+	<!-- MD -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet"
+	 href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+
+	<style>
+			html, body { 
+				min-height: 400px;
+				min-width: 300px; 
+			}
+
+			.mdl-card { /* over writing Google's dumb min height for card*/
+				min-height: 10px;
+			}
+
+			.mdl-layout {
+				height: 100%;
+			}
+		</style>
+</head>
+
+<body>
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Sports App</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="Trending/trending.html">Trending</a></li>
+              <li><a href="New/new.html">New</a></li>
+              <li><a href="EditFeed/editFeed.html">Edit Feed</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="Profile/profile.html">Profile</a></li>
+              <li><a href="#">Login</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+
+		<div class="btn-toolbar" role="toolbar" aria-label="...">
+			<button type="button" class="btn btn-sm btn-default">Politics &times;</button>
+			<button type="button" class="btn btn-sm btn-default">News &times;</button>
+			<button type="button" class="btn btn-sm btn-default">Warriors &times;</button>
+			<button type="button" class="btn btn-sm btn-default">Add more</button>
+		</div>
+
+		<main class="mdl-layout__content">
+				<div class="page-content"><!-- Your content goes here -->
+
+					<div class="mdl-grid">
+						<div class="mdl-card mdl-shadow--4dp">
+							
+							<div class="mdl-card__title">
+								<h2 class="mdl-card__title-text">
+								Warriors snatch new record </h2>
+							</div>
+
+							<div id="error_detail" 
+							class="mdl-card__supporting-text">
+								Best start in NBA history
+								@NBA
+							</div>
+
+							<div class="mdl-card__actions mdl-card--border">
+								<a class="mdl-button mdl-button--colored 
+								mdl-js-button mdl-js-ripple-effect"
+								href="#">
+								Go to Tweet</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="mdl-grid"> 
+						<div class="mdl-card mdl-shadow--4dp">
+
+							<div class="mdl-card__title">
+								<h2 class="mdl-card__title-text">
+								Trump higher in the polls</h2>
+							</div>
+
+							<div id ="debugInfo" 
+							class="mdl-card__supporting-text">
+								The Gaurdian repots that Trump
+								has beaten Obama in the elections.
+							</div>
+
+							<a id="link_content"
+							class="mdl-button mdl-button--colored 
+							mdl-js-button mdl-js-ripple-effect"
+							href="#">Read More</a>
+
+							<a id="link_content"
+							class="mdl-button mdl-button--colored 
+							mdl-js-button mdl-js-ripple-effect"
+							href="#">Share</a>
+						</div>
+					</div>
+
+					<!-- Template for Link Cards -->
+					<div class="mdl-grid">
+						<div class="mdl-card mdl-shadow--4dp">
+							
+							<div class="mdl-card__title">
+								<h2 id="link_title" 
+								class="mdl-card__title-text">
+								Bob Poked you on Facebook</h2>
+							</div>
+
+							<div 
+							class="mdl-card__supporting-text">
+
+								Go to Facebook.com to poke back!
+								<a id="link_content"
+								class="mdl-button mdl-button--colored 
+								mdl-js-button mdl-js-ripple-effect"
+								href="">Facebook</a>
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</main>
+
+
+    </div> <!-- /container -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
+	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
+	crossorigin="anonymous"></script>
+
+
+
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+</body>
+</html>

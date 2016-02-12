@@ -2,3 +2,5 @@ Reconnectify: a web application designed to help connect friends through interac
 
 CSE 170: Human Computer Interaction
 UCSD
+
+https://reconnectify.herokuapp.com/

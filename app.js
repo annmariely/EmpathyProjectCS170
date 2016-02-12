@@ -5,6 +5,7 @@
 var express = require('express');
 var index = require('./routes/index');
 var games = require('./routes/games');
+var playing = require('./routes/playing');
 var login = require('./routes/login');
 var profile = require('./routes/profile');
 
@@ -44,6 +45,7 @@ app.get('/', index.view);
 // app.get('/users', user.list);
 app.get('/', index.view);
 app.get('/games', games.viewGames);
+app.get('/playing', playing.viewPlaying);
 app.get('/login', login.viewLogin);
 app.get('/profile', profile.viewProfile);
 

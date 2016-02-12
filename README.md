@@ -1,4 +1,4 @@
-lab4
-====
+Reconnectify: a web application designed to help connect friends through interactive games.
 
-Lab 4: Programming with Javascript
+CSE 170: Human Computer Interaction
+UCSD

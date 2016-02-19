@@ -4,11 +4,11 @@
 
 var express = require('express');
 var index = require('./routes/index');
-var games = require('./routes/games');
+/*var games = require('./routes/games');
 var playing = require('./routes/playing');
 var login = require('./routes/login');
 var profile = require('./routes/profile');
-var friends = require('./routes/friends');
+var friends = require('./routes/friends');*/
 
 var http = require('http');
 var path = require('path');
@@ -45,11 +45,11 @@ app.get('/', index.view);
 // Example route
 // app.get('/users', user.list);
 app.get('/', index.view);
-app.get('/games', games.viewGames);
-app.get('/playing', playing.viewPlaying);
-app.get('/login', login.viewLogin);
-app.get('/profile', profile.viewProfile);
-app.get('/friends', friends.viewFriends);
+app.get('/games', index.viewGames);
+app.get('/playing', index.viewPlaying);
+app.get('/login', index.viewLogin);
+app.get('/profile', index.viewProfile);
+app.get('/friends', index.viewFriends);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -4,43 +4,89 @@
  */
 
 exports.view = function(req, res){
-res.render('index', {
-	'projects': [
-		{ 'name': 'Waiting in Line',
-		'image': 'lorempixel.people.1.jpeg',
-		'id': 'project1'
-		},
-		{ 'name': 'Needfinding',
-		'image': 'lorempixel.city.1.jpeg',
-		'id': 'project2'
-		},
-		{ 'name': 'Prototyping',
-		'image': 'lorempixel.technics.1.jpeg',
-		'id': 'project3'
-		},
-		{ 'name': 'Heuristic Evaluation',
-		'image': 'lorempixel.abstract.1.jpeg',
-		'id': 'project4'
-		},
-		{ 'name': 'Visualization',
-		'image': 'lorempixel.abstract.8.jpeg',
-		'id': 'project5'
-		},
-		{ 'name': 'Social design',
-		'image': 'lorempixel.people.2.jpeg',
-		'id': 'project6'
-		},
-		{ 'name': 'Gestural interaction',
-		'image': 'lorempixel.technics.2.jpeg',
-		'id': 'project7'
-		},
-		{ 'name': 'Design tools',
-		'image': 'lorempixel.city.2.jpeg',
-		'id': 'project8'
-		}
-	]  
+	res.render('index', {});
+};
+
+exports.viewFriends = function(req, res){
+	res.render('friends', {
+		'friends': [
+			{ 
+				'name': 'Ann Marie',
+				'image': "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mutua_Madrid_Open_2015.jpg/220px-Mutua_Madrid_Open_2015.jpg",
+				'explanation': 'Learn New words and phrases while kicking your friends asses'
+			},
+			{ 
+				'name': 'Devon Sherwood',
+				'image': "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Carrie_Underwood_2%2C_2012.jpg/800px-Carrie_Underwood_2%2C_2012.jpg",
+				'explanation': 'Learn New words and phrases while kicking your friends asses',
+			},
+			{ 
+				'name': 'Dilraj Singh',
+				'image': "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Kobe_Bryant_2014.jpg/629px-Kobe_Bryant_2014.jpg",
+				'explanation': 'Learn New words and phrases while kicking your friends asses'
+			},
+
+		]  
+	});
+};
+
+exports.viewLogin = function(req, res){
+res.render('login', { });
+};
+
+
+/*
+ * GET home page.
+ */
+
+exports.viewPlaying = function(req, res){
+	res.render('playing', { 
+		"players": [
+			{
+				"name": "Ann Marie",
+				"question": "I have been to Hawaii",
+				'score': 2		
+			},
+			{
+				"name": "Andrew",
+				"question": "I have skateboarded",
+				'score': 4	
+			},
+			{
+				"name": "Devon",
+				"question": "I have ridden a horse",
+				'score': 1
+			},
+			{
+				"name": "Dilraj",
+				"question": "I have had a pet cat",
+				'score': 0	
+			}
+		]
 	});
 };
 
 
+exports.viewProfile = function(req, res){
+	res.render('profile', { });
+};
 
+exports.viewGames = function(req, res){
+	res.render('games', {
+		'games': [
+			{ 
+				'name': 'Words with Friends',
+				'explanation': 'Learn New words and phrases while kicking your friends asses'
+			},
+			{ 
+				'name': 'Never have I ever',
+				'explanation': 'Learn New words and phrases while kicking your friends asses'
+			},
+			{ 
+				'name': 'Cards against Humanity',
+				'explanation': 'Learn New words and phrases while kicking your friends asses'
+			},
+
+		]  
+	});
+};

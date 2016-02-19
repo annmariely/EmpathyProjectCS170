@@ -22,11 +22,18 @@
 				<div class="mdl-grid">
 					<div class="mdl-card mdl-shadow--4dp">
 						<div class="mdl-card__title">	
+							Your Score:  <span id="yourscore" class="badge">3</span> 
+						</div>
+					</div>
+				</div>
+				<div class="mdl-grid">
+					<div class="mdl-card mdl-shadow--4dp">
+						<div class="mdl-card__title">	
 							<!-- {{#each players}} 
 							<span id="{{name}}"class="mdl-badge" data-badge="3">{{name}}</span>
 							{{/each}}  -->
 							{{#each players}}
-								{{name}} <span id="{{name}}score" class="badge">5</span> 
+								{{name}} <span id="{{name}}score" class="badge">3</span> 
 							{{/each}}
 						</div>
 					</div>
@@ -62,11 +69,11 @@
 
 				<div class="mdl-card__actions mdl-card--border">
 					<a id="answer" 
-					class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-					Never!</a>
+					class="never mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					I Have Never</a>
 					<a id="answer" 
-					class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-					Have</a>
+					class="have mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					I Have</a>
 				</div>
 			</div>
 		</div>

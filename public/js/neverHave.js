@@ -78,10 +78,15 @@ function initializePage() {
 
 		//$('.page-content').append(input);
 
+		updateScores();
 		playAI();
 	});
 
 	$('body').on('click','#usersTurn-btn', function(){
+
+		var input = $('#post1input').val();
+		if(input === "" || input === "undefined") return;
+
 		counter++;
 		$(this).closest('.mdl-grid').remove();
 		updateScores();
@@ -91,6 +96,14 @@ function initializePage() {
 	$('body').on('click','#answer', function(){
 		counter++;
 		$(this).closest('.mdl-grid').remove();
+
+		if($(this).hasClass('have')) {
+			var score = parseInt( $("#yourscore").html() );
+			if(score > 0) {
+				$("#yourscore").html( score-1 );
+			}
+		}
+
 		updateScores();
 		playAI();
 	});

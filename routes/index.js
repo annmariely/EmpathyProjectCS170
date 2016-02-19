@@ -8,7 +8,23 @@ exports.viewSplash = function(req, res){
 };
 
 exports.viewHome = function(req, res){
-	res.render('index', {});
+	res.render('index', {
+		'home': [
+			{ 
+				'name': 'Play with Andrew',
+				'explanation': 'It has been 5 months since you last played Andrew...'
+			},
+			{ 
+				'name': 'Devon is beating Dilraj in Cards against Humanity',
+				'explanation': 'Devon has beat Dilraj 4/5 games.'
+			},
+			{ 
+				'name': 'Play with Ann Marie',
+				'explanation': 'It has been 1 month since you last played Never Have I Ever...'
+			},
+
+		]  
+	});
 };
 
 exports.viewFriends = function(req, res){

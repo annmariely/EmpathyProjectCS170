@@ -13,10 +13,57 @@
     <div class="container">
 
 	    {{> navbar}}
-		
-		<p align="center">
-		Welcome to Reconnect! An app designed to help one reconnect with old 
-		friends through fun and familiar interactive games. Enjoy!</p>
+	    <main class="mdl-layout__content">
+			<div class="page-content">
+				<!-- Put Your Content Here -->
+
+				<div class="mdl-grid">
+					<div class="mdl-card mdl-shadow--4dp">
+						
+						<div class="mdl-card__title">
+							<h2 class="mdl-card__title-text">
+							Rematch?</h2>
+						</div>
+
+						<div id="error_detail" 
+						class="mdl-card__supporting-text">
+							Devon, Dilraj, Andrew are waiting on you! Devon won
+							at <em>Never Have I Ever</em> 2 years ago.
+						</div>
+
+						<div class="mdl-card__actions mdl-card--border">
+							<a class="mdl-button mdl-button--colored 
+							mdl-js-button mdl-js-ripple-effect"
+							href="/playing">
+							Jump in!</a>
+						</div>
+					</div>
+				</div>
+				{{#each home}}
+					<div class="mdl-grid">
+						<div class="mdl-card mdl-shadow--4dp">
+							
+							<div class="mdl-card__title">
+								<h2 class="mdl-card__title-text">
+								{{name}} </h2>
+							</div>
+
+							<div id="error_detail" 
+							class="mdl-card__supporting-text">
+								{{explanation}}
+							</div>
+
+							<div class="mdl-card__actions mdl-card--border">
+								<a class="mdl-button mdl-button--colored 
+								mdl-js-button mdl-js-ripple-effect"
+								href="">
+								See More</a>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+			</div>
+		</main>
 
 		{{> scripts}}
 	</div>

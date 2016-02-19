@@ -6,14 +6,14 @@ UCSD
 https://reconnectify.herokuapp.com/
 
 
-# Node
+### Node
 ``` bash
 node app.js
 ```
 http://localhost:3000/
 
 
-# Heroku
+### Heroku
 If app all good:
 ``` bash
 git push heroku master
@@ -29,3 +29,6 @@ If app, but new setup:
 heroku git:remote -a yourappname
 ```
 http://stackoverflow.com/questions/18406721/heroku-does-not-appear-to-be-a-git-repository
+
+### Ideas
+https://www.npmjs.com/package/handlebars-layouts

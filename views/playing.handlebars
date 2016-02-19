@@ -21,9 +21,12 @@
 
 				<div class="mdl-grid">
 					<div class="mdl-card mdl-shadow--4dp">
-						<div class="mdl-card__title">
-							
-							{{#each players}} {{name}}{{#unless @last}},{{/unless}}
+						<div class="mdl-card__title">	
+							<!-- {{#each players}} 
+							<span id="{{name}}"class="mdl-badge" data-badge="3">{{name}}</span>
+							{{/each}}  -->
+							{{#each players}}
+								{{name}} <span id="{{name}}score" class="badge">5</span> 
 							{{/each}}
 						</div>
 					</div>
@@ -48,12 +51,27 @@
 					</div>
 				</div> 
 
+				<div id="gameCards"></div>
 			</div>
 		</main>
 
-		<script id="neverHave-questionCard" type="text/x-handlebars-template">
-			test	
-		</script>
+		<div id="template" class="mdl-grid" style="display: none;">
+			<div class="mdl-card mdl-shadow--4dp">
+				<div id="text" class="mdl-card__title">
+				</div>
+
+				<div class="mdl-card__actions mdl-card--border">
+					<a id="answer" 
+					class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					Never!</a>
+					<a id="answer" 
+					class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					Have</a>
+			</div>
+			</div>
+			
+		</div>
+
 
 		{{> scripts}}
 		<script src="/js/neverHave.js"></script>

@@ -43,7 +43,7 @@ exports.viewPlaying = function(req, res){
 	res.render('playing', { 
 		"players": [
 			{
-				"name": "Ann Marie",
+				"name": "Ann",
 				"question": "I have been to Hawaii",
 				'score': 2		
 			},

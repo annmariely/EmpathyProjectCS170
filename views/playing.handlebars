@@ -2,89 +2,61 @@
 
 <html>
 <head>
-	<title>Playing</title>  
+	<title>Reconnectify</title>  
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Latest compiled and minified bootstrap CSS -->
-	<link rel="stylesheet" 
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
-	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
-	crossorigin="anonymous">
-
-
-	<!-- MD -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet"
-	 href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
-
-	<style>
-			html, body { 
-				min-height: 400px;
-				min-width: 300px; 
-			}
-
-			.mdl-card { /* over writing Google's dumb min height for card*/
-				min-height: 10px;
-			}
-
-			.mdl-layout {
-				height: 100%;
-			}
-		</style>
+	{{> styles}}
 </head>
 
 <body>
-		<div class="container">
+    <div class="container">
 
-		{{> navbar}}
-
-
+	    {{> navbar}}
+		
 		<main class="mdl-layout__content">
-				<div class="page-content"><!-- Your content goes here -->
-					
-					<h4>Never have I ever...</h4>
+			<div class="page-content">
 
-					{{#each players}}
-					<div class="mdl-grid">
-						<div class="mdl-card mdl-shadow--4dp">
+				<h4>Never have I ever...</h4>
+
+				<div class="mdl-grid">
+					<div class="mdl-card mdl-shadow--4dp">
+						<div class="mdl-card__title">
 							
-							<div class="mdl-card__title">
-								<h2 class="mdl-card__title-text">
-								{{name}} </h2>
-							</div>
-
-							<div id="error_detail" 
-							class="mdl-card__supporting-text">
-								{{question}}
-							</div>
-
-							<div class="mdl-card__actions mdl-card--border">
-								<a class="mdl-button mdl-button--colored 
-								mdl-js-button mdl-js-ripple-effect"
-								href="#">
-								Score: {{score}}</a>
-							</div>
+							{{#each players}} {{name}}{{#unless @last}},{{/unless}}
+							{{/each}}
 						</div>
 					</div>
-					{{/each}}
-
-					<!-- Start HTML Code --><iframe WIDTH="200" HEIGHT="400" title="Shoutbox" src="http://shoutbox.widget.me/window.html?uid=vft8mknz" frameborder="0" scrolling="auto"></iframe><script src="http://shoutbox.widget.me/v1.js" type="text/javascript"></script><br><a href="http://shoutbox.widget.me" title="Shoutbox Widget">Shout</a><a href="http://shoutbox-tutorials.blogspot.com" title="Shoutbox Tutorials">bo</a><a href="http://www.youtube.com/watch?v=4IBqLxtAbs0" title="Shoutbox Video">x</a><br><!-- End HTML Code -->
 				</div>
 
+				<div id="post1" class="mdl-grid">
+					<div class="mdl-card mdl-shadow--4dp">
+						<div class="mdl-card__supporting-text">
 
-			</main>
+							<form action="#">
+								<div class="mdl-textfield mdl-js-textfield 
+								mdl-textfield--floating-label">
+								<input class="mdl-textfield__input" type="text" id="post1input">
+								<label class="mdl-textfield__label" for="post1input">
+								I have never...</label>
+								</div>
+							</form>
+						</div>
 
+						<a id="post1btn" class="mdl-button mdl-button--colored 
+						mdl-js-button mdl-js-ripple-effect">Post</a>
+					</div>
+				</div> 
 
-		</div> <!-- /container -->
+			</div>
+		</main>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
-	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
-	crossorigin="anonymous"></script>
+		<script id="neverHave-questionCard" type="text/x-handlebars-template">
+			test	
+		</script>
 
-
-
-	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+		{{> scripts}}
+		<script src="/js/neverHave.js"></script>
+	</div>
 </body>
 </html>

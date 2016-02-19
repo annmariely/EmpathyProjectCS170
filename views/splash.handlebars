@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Reconnectify</title>  
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	{{> styles}}
+</head>
+
+<body>
+    <div class="container">
+
+	    {{> navbar}}
+	    <main class="mdl-layout__content">
+			<div class="page-content">
+				<!-- Put Your Content Here -->
+
+				<h2>Reconnectify</h2>
+
+				<h4>In private Beta, please request user credentials via prayer.</h4>
+
+
+      <form class="form-signin">
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <a class="btn btn-lg btn-primary btn-block" type="submit"
+        href="/home">Sign in</a>
+      </form>
+
+			</div>
+		</main>
+
+		{{> scripts}}
+	</div>
+</body>
+</html>

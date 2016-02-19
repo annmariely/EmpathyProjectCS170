@@ -41,10 +41,10 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', index.view);
+app.get('/', index.viewSplash);
 // Example route
 // app.get('/users', user.list);
-app.get('/', index.view);
+app.get('/home', index.viewHome);
 app.get('/games', index.viewGames);
 app.get('/playing', index.viewPlaying);
 app.get('/login', index.viewLogin);

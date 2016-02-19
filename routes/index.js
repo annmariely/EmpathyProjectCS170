@@ -3,7 +3,11 @@
  * GET home page.
  */
 
-exports.view = function(req, res){
+exports.viewSplash = function(req, res){
+	res.render('splash', {});
+};
+
+exports.viewHome = function(req, res){
 	res.render('index', {});
 };
 

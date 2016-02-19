@@ -67,10 +67,27 @@
 					<a id="answer" 
 					class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
 					Have</a>
+				</div>
 			</div>
-			</div>
-			
 		</div>
+
+		<div id="usersTurnTemplate" class="mdl-grid" style="display: none;">
+			<div class="mdl-card mdl-shadow--4dp">
+				<div class="mdl-card__supporting-text">
+					<form action="#">
+						<div class="mdl-textfield mdl-js-textfield 
+						mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="post1input">
+						<label class="mdl-textfield__label" for="post1input">
+						I have never...</label>
+						</div>
+					</form>
+				</div>
+
+				<a id="usersTurn-btn" class="mdl-button mdl-button--colored 
+				mdl-js-button mdl-js-ripple-effect">Post</a>
+			</div>
+		</div> 
 
 
 		{{> scripts}}

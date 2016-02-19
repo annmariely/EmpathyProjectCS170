@@ -21,7 +21,22 @@ var questions = [
 		'qs': 'Dilraj has never sang in the shower.'
 	},
 	{
-		'qs': 'Ann pulled an all-nighter'
+		'qs': 'Ann has never pulled an all-nighter'
+	},
+	{
+		'qs': 'Devon has never shaved her head'
+	},
+	{
+		'qs': 'Andrew has never been to NYC'
+	},
+	{
+		'qs': 'Dilraj has never worn socks'
+	},
+	{
+		'qs': 'Ann has never eaten fish'
+	},
+	{
+		'qs': 'Devon has never been to UCLA'
 	},
 ];
 
@@ -53,7 +68,7 @@ function initializePage() {
 		if(input === "" || input === "undefined") return;
 		console.log(input);
 		
-		$('#post1').hide();
+		$('#post1').remove();
 		
 		/*var $template = $('#neverHave-questionCard').html();
 		var template = Handlebars.compile($template);
@@ -66,8 +81,15 @@ function initializePage() {
 		playAI();
 	});
 
+	$('body').on('click','#usersTurn-btn', function(){
+		counter++;
+		$(this).closest('.mdl-grid').remove();
+		updateScores();
+		playAI();
+	});
+
 	$('body').on('click','#answer', function(){
-		//counter++;
+		counter++;
 		$(this).closest('.mdl-grid').remove();
 		updateScores();
 		playAI();
@@ -77,8 +99,10 @@ function initializePage() {
 function updateScores() {
 	for(var i = 0; i < players.length; i++) {
 		var id = players[i].name;
-		var score = $("#"+id+"score").html();
-		$("#"+id+"score").html( parseInt(score)-Math.round(Math.random()) );
+		var score = parseInt( $("#"+id+"score").html() );
+		if(score > 0) {
+			$("#"+id+"score").html( score-Math.round(Math.random()) );
+		}
 	}
 };
 
@@ -86,11 +110,21 @@ function playAI() {
 	console.log('AI');
 
 	if(questions[counter]) {
-		displayCard(questions[counter].qs);
+		if(counter !== 0 && counter % 4 === 0) {
+			usersTurn();
+		} else {
+			displayCard(questions[counter].qs);
+		}
 	}
-	counter++;
+	//counter++;
 }
 
+function usersTurn() {
+	var $card = $('#usersTurnTemplate').clone();
+	$card.removeAttr('id');
+	$('#gameCards').prepend($card);
+	$card.show();
+}
 
 function displayCard(text) {
 	var $card = $('#template').clone();

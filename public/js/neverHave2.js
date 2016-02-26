@@ -40,21 +40,6 @@ var questions = [
 	},
 ];
 
-var players = [
-			{
-				"name": "Ann",	
-			},
-			{
-				"name": "Andrew",
-			},
-			{
-				"name": "Devon",
-			},
-			{
-				"name": "Dilraj",
-			}
-];
-
 var scores = {
 	'Ann': 3,
 	'Andrew': 3, 
@@ -73,64 +58,83 @@ function initializePage() {
 	$('#post1btn').click(function(){
 
 		var input = $('#post1input').val();
-		
 		if(input === "" || input === "undefined") return;
-		console.log(input);
 		
 		$('#post1').remove();
+
+		updateScores();
 		
-		/*var $template = $('#neverHave-questionCard').html();
-		var template = Handlebars.compile($template);
-		var data = {};
-		data['test'] = input;
-		var output = template(data);*/
-
-		//$('.page-content').append(input);
-
-		updateScores();
-		playAI();
 	});
 
-	$('body').on('click','#usersTurn-btn', function(){
-
-		var input = $('#post1input').val();
-		if(input === "" || input === "undefined") return;
-
-		counter++;
-		$(this).closest('.mdl-grid').remove();
-		updateScores();
-		playAI();
-	});
-
-	$('body').on('click','#answer', function(){
-		counter++;
-		$(this).closest('.mdl-grid').remove();
-
-		if($(this).hasClass('have')) {
-			
-			if(yourscore > 0) {
-				yourscore = yourscore - 1;
-				$("#yourscore").html( yourscore );
-			}
-		}
-
-		updateScores();
-		playAI();
-	});
+	$('body').on('click','#usersTurn-btn', userCardButton);
+	$('body').on('click','#answer', yourCardButton);
 }
 
-function updateScores() {
+function userCardButton() {
+	var input = $('#post1input').val();
+	if(input === "" || input === "undefined") return;
+
+	counter++;
+	
+	updateScores( $(this).closest('.mdl-grid') );
+}
+
+function yourCardButton() {
+	counter++;
+
+	if($(this).hasClass('have')) {
+		
+		if(yourscore > 0) {
+			yourscore = yourscore - 1;
+			$("#yourscore").html( yourscore );
+		}
+	}
+
+	updateScores( $(this).closest('.mdl-grid') );
+}
+
+function updateScores(card) {
+
+	var text = '';
 
 	for(var player in scores) {
 		if(scores[player] > 0) {
-			scores[player] = scores[player]-Math.round(Math.random());
+
+			// 1 - has | 0 - has not
+			var hasHasNot = Math.round(Math.random());
+
+			if(hasHasNot == 1) {
+				text += player + ' has.<br>';
+			} else {
+				text += player + ' has not.<br>';
+			}
+
+			scores[player] = scores[player] - hasHasNot;
 			$("#"+player+"score").html(scores[player]);
 		}
 	}
-	checkWinner();
+
+	if(card) card.remove();
+
+	displayLoadingCard();
+
+	setTimeout(function()
+    {	
+    	$('#loadingCard').hide();
+		displayMessageCard(text, 'result');
+    }, 2000);	
+
+
+	setTimeout(function()
+    {
+       $('#result').remove();
+       checkWinner();
+       playAI();
+    }, 5000);	
 };
 
 function checkWinner() {
+	
 	var aboveZero = 0;
 
 	for(var player in scores) {
@@ -164,12 +168,9 @@ function checkWinner() {
 	if(aboveZero < 2) {
 		counter = -1;
 	}
-
 };
 
 function playAI() {
-	console.log('AI');
-
 	if(questions[counter]) {
 		if(counter !== 0 && counter % 4 === 0) {
 			usersTurn();
@@ -177,7 +178,6 @@ function playAI() {
 			displayCard(questions[counter].qs);
 		}
 	}
-	//counter++;
 }
 
 function usersTurn() {
@@ -195,11 +195,20 @@ function displayCard(text) {
 	$card.show();
 }
 
-function displayMessageCard(text) {
+function displayMessageCard(text, id) {
 
 	var $card = $('#message_template').clone();
 	$card.removeAttr('id');
+
+	if(id){
+		$card.attr('id', id);
+	}
+
 	$card.find('#text').html(text);
 	$('#gameCards').prepend($card);
 	$card.show();
+}
+
+function displayLoadingCard(){
+	$('#loadingCard').show();
 }

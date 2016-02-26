@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Reconnectify</title>  
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	{{> styles}}
+</head>
+
+<body>
+    <div class="container">
+
+	    {{> navbar}}
+		
+		<main class="mdl-layout__content">
+			<div class="page-content">
+
+				<h4>Never have I ever...</h4>
+
+				<div class="mdl-grid">
+					<div class="mdl-card mdl-shadow--4dp">
+						<div class="mdl-card__title">	
+							Your Score:  <span id="yourscore" class="badge">3</span> 
+						</div>
+					</div>
+				</div>
+				<div class="mdl-grid">
+					<div class="mdl-card mdl-shadow--4dp">
+						<div class="mdl-card__title">	
+							<!-- {{#each players}} 
+							<span id="{{name}}"class="mdl-badge" data-badge="3">{{name}}</span>
+							{{/each}}  -->
+							{{#each players}}
+								{{name}} <span id="{{name}}score" class="badge">3</span> 
+							{{/each}}
+						</div>
+					</div>
+				</div>
+
+				<div id="post1" class="mdl-grid">
+					<div class="mdl-card mdl-shadow--4dp">
+						<div class="mdl-card__supporting-text">
+
+							<form action="#">
+								<div class="mdl-textfield mdl-js-textfield 
+								mdl-textfield--floating-label">
+								<input class="mdl-textfield__input" type="text" id="post1input">
+								<label class="mdl-textfield__label" for="post1input">
+								I have never...</label>
+								</div>
+							</form>
+						
+
+						<a id="post1btn" class="mdl-button mdl-button--colored 
+						mdl-js-button mdl-js-ripple-effect">Post</a>
+						</div>
+					</div>
+				</div> 
+
+				<div id="loadingCard" class="mdl-grid" style="display: none">
+					<div class="mdl-card mdl-shadow--4dp">
+						<div class="mdl-card__supporting-text">
+						<div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+						</div>
+					</div>
+				</div> 
+
+				<div id="gameCards"></div>
+			</div>
+		</main>
+
+		<div id="template" class="mdl-grid" style="display: none;">
+			<div class="mdl-card mdl-shadow--4dp">
+				<div id="text" class="mdl-card__title">
+				</div>
+
+				<div class="mdl-card__actions mdl-card--border">
+					<a id="answer" 
+					class="never mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					I Have Never</a>
+					<a id="answer" 
+					class="have mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					I Have</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="message_template" class="mdl-grid" style="display: none;">
+			<div class="mdl-card mdl-shadow--4dp">
+				<div id="text" class="mdl-card__title">
+				</div>
+			</div>
+		</div>
+
+		<div id="usersTurnTemplate" class="mdl-grid" style="display: none;">
+			<div class="mdl-card mdl-shadow--4dp">
+				<div class="mdl-card__supporting-text">
+					<form action="#">
+						<div class="mdl-textfield mdl-js-textfield 
+						mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="post1input">
+						<label class="mdl-textfield__label" for="post1input">
+						I have never...</label>
+						</div>
+					</form>
+				</div>
+
+				<a id="usersTurn-btn" class="mdl-button mdl-button--colored 
+				mdl-js-button mdl-js-ripple-effect">Post</a>
+			</div>
+		</div> 
+
+
+		{{> scripts}}
+		<script src="/js/neverHave2.js"></script>
+	</div>
+</body>
+</html>

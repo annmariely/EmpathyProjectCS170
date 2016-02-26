@@ -47,6 +47,8 @@ app.get('/', index.viewSplash);
 app.get('/home', index.viewHome);
 app.get('/games', index.viewGames);
 app.get('/playing', index.viewPlaying);
+app.get('/playing1', index.viewPlaying1);
+app.get('/playing2', index.viewPlaying2);
 app.get('/login', index.viewLogin);
 app.get('/profile', index.viewProfile);
 app.get('/friends', index.viewFriends);

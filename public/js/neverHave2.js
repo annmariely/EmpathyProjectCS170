@@ -212,3 +212,10 @@ function displayMessageCard(text, id) {
 function displayLoadingCard(){
 	$('#loadingCard').show();
 }
+
+$('html').on('click','#results', trackResults);
+
+function trackResults(){
+	console.log('clicked results');
+	ga("send", "event", "like", "click");
+};

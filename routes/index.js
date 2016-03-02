@@ -77,14 +77,17 @@ var players = {
 
 exports.viewPlaying = function(req, res){
 	res.render('playing1', players);
+	$(".post1btn").click(projectClick);
 };
 
 exports.viewPlaying1 = function(req, res){
 	res.render('playing1', players);
+	$(".post1btn").click(projectClick);
 };
 
 exports.viewPlaying2 = function(req, res){
 	res.render('playing2', players);
+	$(".post1btn").click(projectClick);
 };
 
 

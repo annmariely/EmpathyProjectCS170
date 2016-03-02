@@ -111,3 +111,7 @@ exports.viewGames = function(req, res){
 		]  
 	});
 };
+
+function projectClick(){
+	ga("send", "event", "like", "click");
+};
